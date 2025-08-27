@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phys-GS Lite — Tarun G. Vadaparthi</title>
+<meta name="description" content="Phys-GS Lite: Material-Aware Dynamic Gaussian Splatting">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fbfbfd;--ink:#161a22;--sub:#5d6a7e;--line:#e8ecf3;--pill:#eef2ff;--max:880px}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.7}
+  .wrap{max-width:var(--max);margin:0 auto;padding:36px 20px}
+  h1{font-family:"Source Serif 4",Georgia,serif;font-weight:600;margin:.2rem 0}
+  .by{color:var(--sub);margin:.4rem 0 1rem}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin:.8rem 0 1.2rem}
+  .pill{padding:8px 12px;border-radius:999px;background:var(--pill);border:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:600}
+  hr{border:none;border-top:1px solid var(--line);margin:26px 0}
+  figure{margin:18px 0}
+  figcaption{color:var(--sub);font-size:.9rem;margin-top:8px}
+  img,video{max-width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
+  pre{white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <!-- Title -->
+  <header>
+    <h1>Phys-GS Lite: Material-Aware Dynamic Gaussian Splatting</h1>
+    <div class="by">Tarun Gangadhar Vadaparthi</div>
+    <div class="row">
+      <a class="pill" href="../docs/PhysGSLite.pdf" target="_blank">📄 Write Up (PDF)</a>
+      <a class="pill" href="https://github.com/tarungangadhar/PhysGSLite" target="_blank">💻 Code</a>
+    </div>
+  </header>
+
+  <!-- Demo Video -->
+  <section>
+    <hr>
+    <h3>Demo</h3>
+    <video autoplay loop muted playsinline>
+      <source src="assets/demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption>Dynamic water ripples induced via physics inspired deformation.</figcaption>
+  </section>
+
+  <!-- Abstract -->
+  <section>
+    <hr>
+    <h3>Abstract</h3>
+    <p>
+      Phys-GS Lite augments 3D Gaussian Splatting with semantic separation and physics-inspired dynamics.
+      Using simple geometry heuristics, the method distinguishes rigid and deformable splats (e.g., ship vs water).
+      A sinusoidal wind field introduces wave-like motion, while Laplacian smoothing ensures coherent deformations.
+      This lightweight prototype demonstrates that physical priors can extend Gaussian Splatting toward dynamic,
+      material-aware rendering without heavy neural training.
+    </p>
+  </section>
+
+  <!-- Method -->
+  <section>
+    <hr>
+    <h3>Method Overview</h3>
+    <figure>
+      <img src="assets/method.png" alt="Pipeline diagram">
+      <figcaption>Pipeline: semantic labeling → sinusoidal wind deformation → Laplacian smoothing.</figcaption>
+    </figure>
+  </section>
+
+  <!-- Results -->
+  <section>
+    <hr>
+    <h3>Results</h3>
+    <figure>
+      <img src="assets/semantic.png" alt="Semantic ship vs water">
+      <figcaption>Semantic labeling of ship vs water splats.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/heatmap.png" alt="Heatmap of motion intensity">
+      <figcaption>Heatmap visualization of displacement intensity.</figcaption>
+    </figure>
+  </section>
+
+
+
+</main>
+</body>
+</html>
